@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invoice</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- JS Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+
+<body>
+  <div class="invoice-container">
+    <h1 class="in">Invoice</h1>
+    <h2 class="title">smartinvoice-app</h2>
+    <label>Estimate 24-25</label><br>
+
+    <label>Invoice No.</label>
+    <input type="number" id="invoice-no" value="1" min="1">
+
+    <label>Date and Time</label>
+    <input type="datetime-local" id="date">
+
+    <label>Customer Name</label>
+    <input type="text" id="customer-name" placeholder="Customer Name">
+
+    <label>Customer Address</label>
+    <textarea id="customer-address" placeholder="Customer Address"></textarea>
+
+    <h3>Goods Description</h3>
+    <div class="item">
+      <input type="text" id="item-description" placeholder="Item Description">
+      <input type="number" id="item-quantity" placeholder="Quantity (Sq. Ft./Piece)">
+      <select id="rate-unit">
+        <option value="sqft">Rate per Sq. Ft.</option>
+        <option value="ft">Rate per Piece</option>
+      </select>
+      <input type="number" id="item-rate" placeholder="Rate">
+      <button onclick="addItem()">Add Item</button>
+    </div>
+
+    <div class="responsive-table">
+      <table id="invoice-items-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Quantity</th>
+            <th>Rate/Unit</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="invoice-items"></tbody>
+      </table>
+    </div>
+
+    <h3>Total Amount: ₹<span id="total-amount">0.00</span></h3>
+
+    <div class="buttons">
+      <button onclick="saveInvoice()">Save Invoice</button>
+      <button onclick="downloadExcel()">Download Excel</button>
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+</html>
