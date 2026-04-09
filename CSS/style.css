@@ -1,0 +1,168 @@
+ body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .invoice-container {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      color: #000000;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .in,
+    .title {
+      text-align: center;
+    }
+
+    .title {
+      color: #f00606;
+      margin-bottom: 10px;
+    }
+
+    h2,
+    h3 {
+      color: #333;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+
+    .item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .item input,
+    .item select {
+      flex: 1 1 150px;
+    }
+
+    .item button {
+      padding: 10px 15px;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .item button:hover {
+      background-color: #45a049;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    .responsive-table {
+      overflow-x: auto;
+      display: block;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    /* ============ MEDIA QUERIES ============ */
+    @media screen and (max-width: 768px) {
+      .invoice-container {
+        padding: 15px;
+      }
+
+      h1.in {
+        font-size: 24px;
+      }
+
+      .title {
+        font-size: 18px;
+      }
+
+      .item input,
+      .item select {
+        flex: 1 1 100%;
+      }
+
+      table,
+      th,
+      td {
+        font-size: 13px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .invoice-container {
+        padding: 10px;
+      }
+
+      input,
+      textarea,
+      select,
+      button {
+        font-size: 14px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
